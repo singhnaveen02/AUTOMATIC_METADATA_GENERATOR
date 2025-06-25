@@ -1,0 +1,31 @@
+# Core NLP and ML libraries
+transformers
+torch
+
+# spaCy and language model
+spacy
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
+
+# Keyword extraction
+keybert
+
+# OCR and document/image processing
+pytesseract
+pdfplumber
+PyMuPDF
+docx2txt
+opencv-python
+Pillow
+
+# Data handling and analysis
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+
+# NLTK for NLP
+nltk
+
+# Streamlit (for UI)
+streamlit
