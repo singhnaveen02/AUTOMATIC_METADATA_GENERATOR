@@ -7,6 +7,7 @@ import os
 import re
 from pathlib import Path
 import warnings
+import streamlit as st
 warnings.filterwarnings('ignore')
 
 # Document processing libraries
@@ -1667,7 +1668,7 @@ def create_metadata_visualization(metadata):
         ax4.text(i, value + max(stats_values) * 0.01, f'{value:,}', ha='center', va='bottom')
 
     plt.tight_layout()
-    plt.show()
+    st.pyplot(fig)
 
 # Example: Process a single document
 def run_example_processing():
