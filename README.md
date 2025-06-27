@@ -10,4 +10,6 @@ This Streamlit app processes documents (PDF, DOCX, TXT, images) to generate rich
 
 ```bash
 pip install -r requirements.txt
+python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords'); nltk.download('averaged_perceptron_tagger')"
 streamlit run app.py
+
