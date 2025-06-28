@@ -1,7 +1,7 @@
 streamlit
 transformers
 torch
-spacy==3.5.4
+spacy==3.4.4
 blis==0.7.9
 keybert
 pytesseract
@@ -17,5 +17,5 @@ scikit-learn
 nltk
 Pillow
 
-# spaCy model compatible with spacy 3.5.4
-en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0-py3-none-any.whl
+# ✅ Prebuilt spaCy model compatible with 3.4.4
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.4.1/en_core_web_sm-3.4.1-py3-none-any.whl
