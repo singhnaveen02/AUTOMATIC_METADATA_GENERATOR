@@ -1,6 +1,8 @@
 streamlit
 transformers
 torch
+numpy==1.23.5
+setuptools==65.5.0
 spacy==3.4.4
 blis==0.7.9
 keybert
