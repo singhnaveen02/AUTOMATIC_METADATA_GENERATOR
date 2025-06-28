@@ -20,6 +20,16 @@ import cv2
 
 # NLP libraries
 import spacy
+
+try:
+    nlp = spacy.load("en_core_web_sm")
+    print("✓ spaCy model loaded")
+except:
+    import os
+    os.system("python -m spacy download en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
+    print("✅ spaCy model downloaded and loaded")
+
 from transformers import pipeline, AutoTokenizer, AutoModelForSeq2SeqLM
 from keybert import KeyBERT
 import nltk
