@@ -21,14 +21,21 @@ import cv2
 # NLP libraries
 import spacy
 
-try:
-    nlp = spacy.load("en_core_web_sm")
-    print("✓ spaCy model loaded")
-except:
-    import os
-    os.system("python -m spacy download en_core_web_sm")
-    nlp = spacy.load("en_core_web_sm")
-    print("✅ spaCy model downloaded and loaded")
+def load_spacy_model():
+    try:
+        return spacy.load("en_core_web_sm")
+    except OSError:
+        # If not installed, download and install from wheel
+        subprocess.run([
+            "pip", "install",
+            "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.4.1/en_core_web_sm-3.4.1-py3-none-any.whl"
+        ])
+        importlib.invalidate_caches()
+        return spacy.load("en_core_web_sm")
+
+# Usage
+nlp = load_spacy_model()
+
 
 from transformers import pipeline, AutoTokenizer, AutoModelForSeq2SeqLM
 from keybert import KeyBERT
@@ -53,12 +60,7 @@ sns.set_palette("husl")
 
 print("Environment setup completed successfully!")
 
-# Initialize spaCy model for NER and linguistic analysis
-try:
-    nlp = spacy.load("en_core_web_sm")
-    print("✓ spaCy English model loaded successfully")
-except OSError:
-    print("✗ spaCy English model not found. Please run: python -m spacy download en_core_web_sm")
+
 
 # Initialize KeyBERT for keyword extraction
 kw_model = KeyBERT()
